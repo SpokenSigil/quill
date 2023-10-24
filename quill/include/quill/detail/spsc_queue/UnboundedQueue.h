@@ -110,7 +110,7 @@ public:
 
     // bounded queue max power of 2 capacity since uint32_t type is used to hold the value 2147483648 bytes
     constexpr uint64_t max_bounded_queue_capacity =
-      (std::numeric_limits<BoundedQueue::integer_type>::max() >> 1) + 1;
+      ((std::numeric_limits<BoundedQueue::integer_type>::max)() >> 1) + 1;
 
     if (QUILL_UNLIKELY(capacity > max_bounded_queue_capacity))
     {

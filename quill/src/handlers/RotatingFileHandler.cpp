@@ -10,8 +10,8 @@ namespace
 /***/
 std::pair<std::chrono::hours, std::chrono::minutes> default_rotation_time_daily() noexcept
 {
-  return std::make_pair(std::chrono::hours{std::numeric_limits<std::chrono::hours::rep>::max()},
-                        std::chrono::minutes{std::numeric_limits<std::chrono::hours::rep>::max()});
+  return std::make_pair(std::chrono::hours{(std::numeric_limits<std::chrono::hours::rep>::max)()},
+                        std::chrono::minutes{(std::numeric_limits<std::chrono::hours::rep>::max)()});
 }
 
 /***/

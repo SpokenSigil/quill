@@ -118,7 +118,7 @@ public:
 private:
   std::pair<std::chrono::hours, std::chrono::minutes> _rotation_at_time_daily;
   size_t _rotation_max_file_size{0};                                // 0 means disabled
-  uint32_t _max_backup_files{std::numeric_limits<uint32_t>::max()}; // max means disabled
+  uint32_t _max_backup_files{(std::numeric_limits<uint32_t>::max)()}; // max means disabled
   uint32_t _rotation_interval{0};                                   // 0 means disabled
   RotationFrequency _rotation_frequency{RotationFrequency::Disabled};
   RotationNamingScheme _rotation_naming_scheme{RotationNamingScheme::Index};

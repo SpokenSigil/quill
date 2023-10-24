@@ -135,7 +135,7 @@ TransitEvent* UnboundedTransitEventBuffer::back() noexcept
     // buffer doesn't have enough space
     uint64_t capacity = static_cast<uint64_t>(_writer->transit_buffer.capacity()) * 2ull;
     constexpr uint64_t max_bounded_queue_capacity =
-      (std::numeric_limits<BoundedTransitEventBuffer::integer_type>::max() >> 1) + 1;
+      ((std::numeric_limits<BoundedTransitEventBuffer::integer_type>::max)() >> 1) + 1;
 
     if (QUILL_UNLIKELY(capacity > max_bounded_queue_capacity))
     {

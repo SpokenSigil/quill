@@ -39,7 +39,7 @@ QUILL_NODISCARD constexpr bool is_pow_of_two(uint64_t number) noexcept
 template <typename T>
 QUILL_NODISCARD inline T next_power_of_2(T n)
 {
-  constexpr T max_power_of_2 = (std::numeric_limits<T>::max() >> 1) + 1;
+  constexpr T max_power_of_2 = ((std::numeric_limits<T>::max)() >> 1) + 1;
 
   if (n >= max_power_of_2)
   {

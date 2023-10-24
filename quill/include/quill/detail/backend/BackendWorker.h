@@ -676,7 +676,7 @@ bool BackendWorker::_get_transit_event_from_queue(std::byte*& read_pos, ThreadCo
 void BackendWorker::_process_transit_events(ThreadContextCollection::backend_thread_contexts_cache_t const& cached_thread_contexts)
 {
   // Get the lowest timestamp
-  uint64_t min_ts{std::numeric_limits<uint64_t>::max()};
+  uint64_t min_ts{(std::numeric_limits<uint64_t>::max)()};
   detail::UnboundedTransitEventBuffer* transit_buffer{nullptr};
 
   for (ThreadContext* thread_context : cached_thread_contexts)
@@ -806,7 +806,7 @@ void BackendWorker::_write_transit_event(TransitEvent const& transit_event)
 bool BackendWorker::_process_and_write_single_message(const ThreadContextCollection::backend_thread_contexts_cache_t& cached_thread_contexts)
 {
   ThreadContext* tc{nullptr};
-  uint64_t min_ts{std::numeric_limits<uint64_t>::max()};
+  uint64_t min_ts{(std::numeric_limits<uint64_t>::max)()};
 
   for (ThreadContext* thread_context : cached_thread_contexts)
   {
